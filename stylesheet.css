@@ -1,6 +1,12 @@
 .hidden.menu {
     display: none;
   }
+  .ui.inverted.segment, .ui.primary.inverted.segment {
+    background-position: cover;
+    
+  }
+
+
 
   .masthead.segment {
     min-height: 700px;
