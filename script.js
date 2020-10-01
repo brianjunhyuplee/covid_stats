@@ -18,4 +18,10 @@ $(document)
     .sidebar('attach events', '.toc.item')
   ;
 
+  // $(window).scroll(function(){
+  //   $(".ui.header").fadeIn(1500);
+  // });
+  $(window).ready(function() {
+    $(".ui.text.container").fadeIn(1500);
+  });
 });

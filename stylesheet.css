@@ -1,11 +1,13 @@
-.hidden.menu {
+.ui.text.container {
     display: none;
   }
   .ui.inverted.segment, .ui.primary.inverted.segment {
     background-position: cover;
     
   }
-
+  /* .ui.header {
+    display: none;
+  } */
 
 
   .masthead.segment {
