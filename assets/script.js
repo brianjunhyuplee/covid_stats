@@ -1,34 +1,30 @@
 $(document)
   .ready(function () {
-
-    // var qArticle = userInput
-    var articleId;
-    var articleId1;
-    var articleId2;
-    var articleId3;
-    var articleId4;
-
-
-
-
-
     $(document).on('keypress', function (enter) {
       if (enter.which == 13) {
         var countryName = $("#search").val();
         $("#loading").addClass("loading");
         console.log(countryName);
 
-
+        //get related articles by country on covid
         var queryURL = 'https://content.guardianapis.com/search?q=%22covid%20' + countryName + '%22&api-key=1cd5cbec-afb6-4aea-b671-03563ccf7f61';
-
         $.ajax({
           url: queryURL,
           method: "GET"
         }).then(function (response) {
           console.log(response);
         });
-      }
+      
+        //get stats covid by country
+        var URL = 'https://api.covid19api.com/country/'+countryName;
+        $.ajax({
+          url: URL,
+          method: "GET"
+        }).then(function (response) {
+          console.log(response);
+      });
 
+    }
       // var settings = {
       // 	"async": true,
       // 	"crossDomain": true,
