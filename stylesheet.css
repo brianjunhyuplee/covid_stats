@@ -5,9 +5,9 @@
     background-position: cover;
     
   }
-  /* .ui.header {
-    display: none;
-  } */
+   .bothwidgets {
+    margin: 100px;
+  } 
 
 
   .masthead.segment {
