@@ -21,7 +21,13 @@ $(document)
           url: URL,
           method: "GET"
         }).then(function (response) {
-          console.log(response);
+          var lastIndex = response.length-1;
+          var latestData = response[lastIndex];
+          var dateOf = response[lastIndex].Date;
+          var confirmedCases = response[lastIndex].Confirmed;
+          var activeCases = response[lastIndex].Active;
+          var deathNum = response[lastIndex].Deaths;
+          var recoveredNum = response[lastIndex].Recovered;
       });
 
     }
