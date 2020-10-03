@@ -12,7 +12,15 @@ $(document)
           url: queryURL,
           method: "GET"
         }).then(function (response) {
-          console.log(response);
+          console.log(response.response.results);
+          for (var i = 0; i < response.response.results.length;i++){
+            if (i>3){
+              break;
+            }
+            var websiteUrl = response.response.results[i].webUrl;
+            var websitetitle = response.response.results[i].webTitle;
+          }
+          
         });
       
         //get stats covid by country
