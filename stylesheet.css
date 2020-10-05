@@ -1,4 +1,15 @@
 
+.row {
+
+  -webkit-box-align: baseline;
+
+}
+.covid {
+
+  display: none;
+}
+
+
   
   .ui.inverted.segment, .ui.primary.inverted.segment {
     background-position: cover;

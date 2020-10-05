@@ -91,18 +91,7 @@ $(document)
               $(".middle.aligned.row").append(column.append(card.append(content.append(header, meta, description), extraContent)));
               
             }
-        
-
-
-
-          
-         
-         
-
-
-
-        
-      });
+         });
 
         //get related articles by country on covid
         // var queryURL = 'https://content.guardianapis.com/search?q=%22covid%20' + countryName + '%22&api-key=1cd5cbec-afb6-4aea-b671-03563ccf7f61';
@@ -132,25 +121,66 @@ $(document)
         }).then(function (response) {
           console.log(response);
           var lastIndex = response.length-1;
-          var latestData = response[lastIndex];
           var dateOf = response[lastIndex].Date;
           var confirmedCases = response[lastIndex].Confirmed;
           var activeCases = response[lastIndex].Active;
           var deathNum = response[lastIndex].Deaths;
           var recoveredNum = response[lastIndex].Recovered;
 
+          
+          $("#searchContainer").fadeOut(500, function() {
 
-          $("#searchContainer").fadeOut(500);
-
-          var casesDisplay = $("<h1>").addClass("").text(author).attr("style", "color: #c7383d");
+          var country = $("<h1>").addClass("ui inverted header covid").text(countryName).attr("style","margin-top: 2.5em;");
+          $("#country").append(country);
+          var currentCases = $("<h1>").addClass("ui red header covid").text(activeCases).attr("style","margin: 20px;");
+          $("#head").append(currentCases);
+          var currentCasesText = $("<h3>").addClass("ui inverted header covid").text("Current Confirmed Cases");
+          $(currentCases).append(currentCasesText);
+          var totalCases = $("<h1>").addClass("ui red header covid").text(confirmedCases).attr("style","margin: 20px;");
+          $("#head").append(totalCases);
+          var totalCasesText = $("<h3>").addClass("ui inverted header covid").text("Total Confirmed Cases");
+          $(totalCases).append(totalCasesText);
+          
+          $(".covid").fadeIn(3000, function() {
             
-          // $("#caseContainer").fadeIn(500);
-          // $("#countryDisplay").text(countryName);
-          // $("#totalCases").text(confirmedCases);
-      });
+            
+           
+          });
+        });
+            
+            var dead = $("<h1>").addClass("ui red header covid").text(deathNum).attr("style","margin-top: 0em;");
+            $("#dead").append(dead);
+            var deadText = $("<h3>").addClass("ui inverted header covid").text("Deaths");
+            $(dead).append(deadText);
+            var recovered = $("<h1>").addClass("ui green header covid").text(recoveredNum).attr("style","margin-top: 0em;");
+            $("#recovered").append(recovered);
+            var recoveredText = $("<h3>").addClass("ui inverted header covid").text("Recovered");
+            $(recovered).append(recoveredText);
+            var dateOfText = $("<h1>").addClass("ui inverted header covid").text(dateOf).attr("style","opacity: 5%;");
+            $("#dateof").append(dateOfText);
+        
+            // var extend = $("<div>").addClass("ui inverted vertical stripe segment covid");
+            // $("#extend").append(extend);
 
+            $('#caseContainer').animate({
+              'marginBottom' : "+=300px" //moves down
+              },5000);
+
+
+
+
+
+
+           
+           
+      });
     }
 });
+
+
+
+
+
 
 
   // fix menu when passed
