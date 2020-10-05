@@ -16,7 +16,9 @@ $(document)
         method: "GET"
       }).then(function (response) {
         
-      
+        
+
+
         for (var i = 0; i < 5; i++){
               
               $("#loading").removeClass("loading");
@@ -25,12 +27,19 @@ $(document)
               var websitetitle = response.articles[i].title;
               
             }
-                  
+        
+
+
+
+          
           var column = $("<div>").addClass("column");
           var segment = $("<div>").addClass("ui segment");
           var article = $("<iframe>").attr("src", websiteUrl);
           $(".ui.three.column.grid").append(column.append(segment.append(article)));
-     
+
+
+
+        
       });
 
 
