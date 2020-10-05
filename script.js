@@ -6,10 +6,10 @@ $(document)
 
     $(document).ready(function () {
       // scroll for menu
-      $('div.ui').find('a').click(function(){
+      $('div.menu').find('a').click(function(){
         var $href = $(this).attr('href');
         var $anchor = $('#'+$href).offset();
-        window.scrollTo($anchor.left,$anchor.top);
+        $('body').animate({ scrollTop: $anchor.top });
         return false;
     });
 
