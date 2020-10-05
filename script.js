@@ -1,8 +1,13 @@
+
+$('div.menu').find('a').click(function () {
+  var $href = $(this).attr('href');
+  var $anchor = $('#' + $href).offset();
+  $('body').animate({ scrollTop: $anchor.top });
+  return false;
+});
+
 $(document)
   .ready(function () {
-    
-    
-    
 
     $(document).ready(function () {
      
@@ -156,8 +161,8 @@ $(document)
             $("#recovered").append(recovered);
             var recoveredText = $("<h3>").addClass("ui inverted header covid").text("Recovered");
             $(recovered).append(recoveredText);
-            var dateOfText = $("<h1>").addClass("ui inverted header covid").text(dateOf).attr("style","opacity: 5%;");
-            $("#dateof").append(dateOfText);
+            // var dateOfText = $("<h1>").addClass("ui inverted header covid").text(dateOf).attr("style","opacity: 5%;");
+            // $("#dateof").append(dateOfText);
         
             // var extend = $("<div>").addClass("ui inverted vertical stripe segment covid");
             // $("#extend").append(extend);
@@ -204,3 +209,4 @@ $(document)
     $(".ui.text.container").fadeIn(500);
   });
 });
+

@@ -8,15 +8,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 </head>
 <body>
-
-      <div class="ui vertical inverted sidebar menu">
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <a class="item">Login</a>
-        <a class="item">Signup</a>
-      </div>
       
       
       <!-- Page Contents -->
@@ -29,9 +20,9 @@
                 <i class="sidebar icon"></i>
               </a>
               <a class="active item">Home</a>
-              <a class="item">Featured</a>
-              <a class="item">News</a>
-              <a class="item">About</a>
+              <a class="item" href="#news">News</a>
+              <a class="item" href="#about">About</a>
+              <a class="item" href="#contact">Contact</a>
 
             </div>
           </div>
@@ -76,7 +67,7 @@
 
         <div id="extend"></div>
 
-        <div class="ui vertical stripe segment"> 
+        <div class="ui vertical stripe segment" id = "news"> 
           <h3 class="ui center aligned header">Latest COVID-19 News</h3>
           <p class="ui center aligned header" id="countryName" style="padding-bottom: 18px;">Worldwide</p>
           <div class="ui centered stackable grid articles">
@@ -87,13 +78,14 @@
           </div>
         </div>
 
+        <iframe width="100%" height="502" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
 
         <div class="ui vertical stripe segment">
           
-              <iframe width="100%" height="602" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
+             
 
         </div>
-          <div class="ui vertical stripe segment">
+          <!-- <div class="ui vertical stripe segment" id="about">
             <div class="ui middle aligned stackable grid container">
               <div class="row">
                 <div class="eight wide column">
@@ -103,14 +95,59 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="ui vertical stripe segment">
+          </div> -->
+          <div class="ui vertical stripe segment" id = "about">
             <div class="ui middle aligned stackable grid container">
               <div class="row">
                 <div class="eight wide column">
-                  <h3 class="ui header">
-                    <div class="content">Contact</div>
-                  </h3>
+                  <h1 class="ui header">
+                    <div class="content">
+                      About
+                      <h4>
+                        <br>
+                      <div>
+                        <a href = "https://aarondig.github.io/portfolioframework">Aaron Diggdon's Portfolio</a>
+                      </div>
+                      <hr>
+                      <div>
+                        <a href = "https://brianjunhyuplee.github.io/portfolio/">Brian Lee's Portfolio</a>
+                      </div>
+                      <hr>
+                      <div>
+                        <a href = "https://HEEM86.github.io/EW-Responsive-Site/">Ernest Wesson's Portfolio</a>
+                      </div>
+                      <hr>
+                      <div>
+                        <a href = "https://biencarlo.github.io/About-Me">Biencarlo Villa's Portfolio</a>
+                      </div>
+                      <hr>
+                    </h4>
+                    </div>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui vertical stripe masthead segment" id = "contact">
+            <div class="ui middle aligned stackable grid container">
+              <div class="row">
+                <div class="eight wide column">
+                  <h3 class="ui header">Contact</h3>
+                  <form class="ui form">
+                    <div class="field">
+                      <label>First Name</label>
+                      <input type="text" name="name">
+                    </div>
+                    <div class="field">
+                      <label>Email</label>
+                      <input type="email" >
+                    </div>
+                    <div class="field">
+                      <label>What’s on your mind?</label>
+                      <textarea></textarea>
+                    </div>
+                    <button class=“ui button” type=“submit” id = "submitBtn">Submit</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -174,36 +211,16 @@
             </div>
           </div> -->
         
-        
-          <!-- <div class="ui inverted vertical footer segment">
-            <div class="ui container">
-              <div class="ui stackable inverted divided equal height stackable grid">
-                <div class="three wide column">
-                  <h4 class="ui inverted header">About</h4>
-                  <div class="ui inverted link list">
-                    <a href="#" class="item">Sitemap</a>
-                    <a href="#" class="item">Contact Us</a>
-                    <a href="#" class="item">Religious Ceremonies</a>
-                    <a href="#" class="item">Gazebo Plans</a>
-                  </div>
-                </div>
-                <div class="three wide column">
-                  <h4 class="ui inverted header">Services</h4>
-                  <div class="ui inverted link list">
-                    <a href="#" class="item">Banana Pre-Order</a>
-                    <a href="#" class="item">DNA FAQ</a>
-                    <a href="#" class="item">How To Access</a>
-                    <a href="#" class="item">Favorite X-Men</a>
-                  </div>
-                </div>
-                <div class="seven wide column">
-                  <h4 class="ui inverted header">Footer Header</h4>
-                  <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                </div>
+
+        <div class="ui inverted vertical footer segment">
+          <div class="ui container">
+            <div class="ui inverted equal height grid">
+              <div class="column">
+                <h4 class="ui inverted centered header" style="text-align: center; padding:10px; font-weight: 100;">Copyright 2020</h4>
               </div>
-            </div>
           </div>
-        </div> -->
+        </div>
+      </div>
       <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
