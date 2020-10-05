@@ -7,8 +7,11 @@
   }
    .bothwidgets {
     margin: 100px;
-  } 
-
+  }
+  
+  .ui.fixed.sticky + p {
+    margin-top: 39px;
+  }
 
   .masthead.segment {
     min-height: 700px;
