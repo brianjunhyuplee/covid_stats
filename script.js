@@ -1,30 +1,105 @@
 $(document)
   .ready(function () {
+    
+    
+    
+
+    $(document).ready(function () {
+     
+      $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=covid19 worldwide&sortBy=popularity&apiKey=3ae30d398e914295b27c15aeddce8ec5",
+        method: "GET"
+      }).then(function (response) {
+        
+        
+        console.log(response);
+
+        for (var i = 0; i < 3; i++){
+              
+
+              var websiteUrl = response.articles[i].url;
+              var websiteTitle = response.articles[i].title;
+              var publisher = response.articles[i].source.name;
+              var textContent = response.articles[i].content;
+              var author = response.articles[i].author;
+
+
+              var column = $("<div>").addClass("column").attr("style","width: 30%; padding: 20px;");
+              var card = $("<a>").addClass("ui fluid centered card").attr("href", websiteUrl);
+              var content = $("<div>").addClass("content");
+              var header = $("<div>").addClass("header").text(websiteTitle).attr("style", "padding-bottom: 7px;");
+              var meta = $("<div>").addClass("meta");
+              var subHead = $("<span>").addClass("category").text(publisher);
+              var description = $("<div>").addClass("description");
+              var descriptionText = $("<p>").text(textContent);
+              var extraContent = $("<div>").addClass("extra content");
+              var authorTag = $("<div>").addClass("right floated author").text(author).attr("style", "color: #c7383d");
+              
+
+              meta.append(subHead);
+              description.append(descriptionText);
+              extraContent.append(authorTag);
+              $(".middle.aligned.row").append(column.append(card.append(content.append(header, meta, description), extraContent)));
+              
+            }
+
+
+          });
+
+        });
+    
     $(document).on('keypress', function (enter) {
       if (enter.which == 13) {
         var countryName = $("#search").val();
         $("#loading").addClass("loading");
         console.log(countryName);
 
-
-
-       
-
-
-      $.ajax({
+        $(".column").remove();
+      
+        $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=covid "+ countryName +"&sortBy=popularity&apiKey=3ae30d398e914295b27c15aeddce8ec5",
         method: "GET"
       }).then(function (response) {
         
         
+        console.log(response);
 
-
-        for (var i = 0; i < 5; i++){
+        for (var i = 0; i < 3; i++){
               
               $("#loading").removeClass("loading");
+
+
+              $("#countryName").text(countryName);
               
+
               var websiteUrl = response.articles[i].url;
-              var websitetitle = response.articles[i].title;
+              var websiteTitle = response.articles[i].title;
+              var publisher = response.articles[i].source.name;
+              var textContent = response.articles[i].content;
+              var author = response.articles[i].author;
+
+
+              var column = $("<div>").addClass("column").attr("style","width: 30%; padding: 20px;");
+              var card = $("<a>").addClass("ui fluid centered card").attr("href", websiteUrl);
+              var content = $("<div>").addClass("content");
+              var header = $("<div>").addClass("header").text(websiteTitle).attr("style", "padding-bottom: 7px;");
+              var meta = $("<div>").addClass("meta");
+              var subHead = $("<span>").addClass("category").text(publisher);
+              var description = $("<div>").addClass("description");
+              var descriptionText = $("<p>").text(textContent);
+              var extraContent = $("<div>").addClass("extra content");
+              var authorTag = $("<div>").addClass("right floated author").text(author).attr("style", "color: #c7383d");
+              
+
+
+              // card.attr("style","width: 100px; padding: 20px;");
+
+
+
+              meta.append(subHead);
+              description.append(descriptionText);
+              extraContent.append(authorTag);
+              $(".middle.aligned.row").append(column.append(card.append(content.append(header, meta, description), extraContent)));
               
             }
         
@@ -32,10 +107,8 @@ $(document)
 
 
           
-          var column = $("<div>").addClass("column");
-          var segment = $("<div>").addClass("ui segment");
-          var article = $("<iframe>").attr("src", websiteUrl);
-          $(".ui.three.column.grid").append(column.append(segment.append(article)));
+         
+         
 
 
 

@@ -8,7 +8,11 @@
    .bothwidgets {
     margin: 100px;
   } 
+  
+  .ui.card > .content, .ui.cards > .card > .content {
+    padding: 25px;
 
+  }
 
   .masthead.segment {
     min-height: 700px;
