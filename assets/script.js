@@ -31,6 +31,7 @@ $(document)
         }).then(function (response) {
           var lastIndex = response.length-1;
           var latestData = response[lastIndex];
+          //Use the below variables for display
           var dateOf = response[lastIndex].Date;
           var confirmedCases = response[lastIndex].Confirmed;
           var activeCases = response[lastIndex].Active;
